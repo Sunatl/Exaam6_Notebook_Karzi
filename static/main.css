@@ -1,0 +1,125 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9; /* Soft background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #007bff; /* Blue background */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid #0056b3;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+header a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    border-radius: 5px;
+    margin: 10px 15px;
+    font-size: 1.2em;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+header a:hover {
+    background-color: #003d75;
+    transform: translateY(-3px);
+}
+
+/* Content styling */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card h3:last-child {
+    margin-bottom: 0;
+}
+
+/* Styling for individual sections (name, email, etc.) */
+.card h3 {
+    font-size: 1.4em;
+    color: #555;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.card h3:nth-child(odd) {
+    color: #007bff;
+}
+
+.card h3:nth-child(even) {
+    color: #444;
+}
+
+/* Button style for delete and update */
+button {
+    background-color: #ff4d4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #e60000;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header a {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .card h3 {
+        font-size: 1.2em;
+    }
+}

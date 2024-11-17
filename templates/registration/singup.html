@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'main1113.css' %}">
+
+<div class="container mt-5">
+    <h1 class="text-primary mb-5 text-center">Create Your Account</h1>
+
+    <div class="card shadow-lg p-4 mb-5 rounded-3">
+        <form method="post">
+            {% csrf_token %}
+            
+            {{ form.as_p }}
+
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-success btn-lg px-5 py-3">Sign Up</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="text-center mt-3">
+        <p>Already have an account? <a href="{% url 'login' %}" class="text-decoration-none text-success">Log in here</a></p>
+    </div>
+</div>
+
+{% endblock %}

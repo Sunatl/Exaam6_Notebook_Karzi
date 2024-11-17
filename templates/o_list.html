@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'index2.css' %}">
+</head>
+<body>
+
+    <div class="a1">
+        <h1>Loan</h1>
+        <div class="base">
+        <!-- <a href="http://127.0.0.1:8000/Rohbar_information"><h3 class="sa">Category</h3></a> -->
+        <a href="{% url 'base' %}"><h3 class="sas">Home</h3></a>
+        <a href="{% url 'o_cr' %}"><h3 class="sas">Add</h3></a>
+    </div>
+    </div>
+
+
+<div class="b1">
+        <table>
+            <caption> <h3>loan</h1> </caption>
+            <tr>
+                <th>Customer</th>
+                <th>total_amount</th>
+                <th>description</th>
+                <th>duration</th>
+                <th>is_paid</th>
+                <th>created_at</th>
+                <th>Detail</th>
+
+            </tr>
+        {% for category in object_list %}
+        <tr>
+        <td>{{ category.customer }}</td>
+        <td>{{ category.total_amount }}</td>
+        <td>{{ category.description }}</td>
+        <td>{{ category.duration }}</td>
+        <td>{{ category.is_paid }}</td>
+        <td>{{ category.created_at }}</td>
+
+        <td><a href="{% url 'o_detail' category.id %}">Get</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+
+    </head>
+    <body>
