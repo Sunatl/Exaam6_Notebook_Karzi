@@ -19,11 +19,28 @@ class Base(TemplateView):
     template_name = "base.html"
 
 
-# Order
+# Orderz
+
+from django.views.generic import ListView
+from django.db.models import Q
+from .models import Loan
 
 class LoanListView(ListView):
     model = Loan
     template_name = 'o_list.html'
+    context_object_name = 'object_list'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        query = self.request.GET.get('q')  
+        if query:
+            queryset = queryset.filter(
+                Q(customer__name__icontains=query) | 
+                Q(description__icontains=query) |  
+                Q(total_amount__icontains=query)     
+            )
+        return queryset
+
 
 
 
