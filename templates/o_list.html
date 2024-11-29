@@ -38,6 +38,7 @@
                 <th>Detail</th>
             </tr>
             {% for category in object_list %}
+            {% if category.is_paid == False %}
             <tr>
                 <td>{{ category.customer }}</td>
                 <td>{{ category.total_amount }}</td>
@@ -47,6 +48,7 @@
                 <td>{{ category.created_at }}</td>
                 <td><a href="{% url 'o_detail' category.id %}">Get</a></td>
             </tr>
+            {% endif %}
             {% endfor %}
         </table>
     </div>

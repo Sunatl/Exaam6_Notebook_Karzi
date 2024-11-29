@@ -19,8 +19,7 @@ class Base(TemplateView):
     template_name = "base.html"
 
 
-# Orderz
-
+# Loan
 from django.views.generic import ListView
 from django.db.models import Q
 from .models import Loan
